@@ -1,0 +1,34 @@
+﻿@model Backend5.Models.Patient
+@{
+    ViewBag.Title = "Delete";
+}
+<h1>@ViewBag.Titles</h1>
+<h2>Patient</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>Address</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>Phone</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+    </dl>
+
+    <div>
+        <form asp-controller="Patients" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-outline-dark" />
+            </div>
+        </form>
+    </div>
+    <div>
+        <a asp-action="Index" asp-controller="Patients">Back to List</a>
+    </div>
+</div>

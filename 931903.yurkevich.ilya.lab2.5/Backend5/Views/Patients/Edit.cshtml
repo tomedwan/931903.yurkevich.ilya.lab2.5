@@ -1,0 +1,32 @@
+﻿@model Backend5.Models.Patient
+@{
+    ViewBag.Title = "Edit";
+}
+<h1>@ViewBag.Titles</h1>
+<h2>Patient</h2>
+<form asp-action="edit" asp-controller="Patients" asp-route-id="@Model.Id">
+    <div class="form-group">
+        <b> <label asp-for="Name" class="control-label">Name</label></b>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <b><label asp-for="Address" class="control-label">Address</label></b>
+        <input type="text" asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address"></span>
+    </div>
+    <div class="form-group">
+        <b> <label asp-for="Phone" class="control-label">Phone</label></b>
+        <input type="text" asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Edit" class="btn btn-outline-dark" />
+    </div>
+    <div>
+        <a asp-action="Index" asp-controller="Patients">Back to List</a>
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

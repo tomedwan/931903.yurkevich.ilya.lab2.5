@@ -1,0 +1,33 @@
+﻿@model Hospital
+@{
+    ViewBag.Title = "Create";
+}
+<h1>@ViewBag.Titles</h1>
+<h2>Hospital</h2>
+<form asp-antiforgery="true" asp-action="Create" asp-controller="Hospitals">
+    <div class="form-group">
+        <b> <label asp-for="Name" class="control-label">Name</label></b>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <b><label asp-for="Address" class="control-label">Address</label></b>
+        <input type="text" asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address"></span>
+    </div>
+    <div class="form-group">
+        <b> <label asp-for="Phone" class="control-label">Phone</label></b>
+        <input type="text" asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-outline-dark" />
+    </div>
+    <div>
+        <a asp-action="Index" asp-controller="Hospitals">Back to List</a>
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

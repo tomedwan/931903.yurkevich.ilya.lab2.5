@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Backend5.Models.Doctor>
+@{
+    ViewBag.Title = "Index";
+}
+<h1>@ViewBag.Title</h1>
+<a asp-action="Create">Create New</a>
+<table class="table">
+    <tr>
+        <th style="border: 0">Name</th>
+        <th style="border: 0">Speciality</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Speciality</td>
+            <td>
+                <a asp-action="Edit" asp-controller="Doctors" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-controller="Doctors" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-controller="Doctors" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

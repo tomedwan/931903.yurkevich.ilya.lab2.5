@@ -1,0 +1,20 @@
+﻿@model Backend5.Models.Patient
+@{
+    ViewBag.Title = "Details";
+}
+<h1>@ViewBag.Titles</h1>
+<h2>Patient</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>@Model.Name</dd>
+        <dt>Address</dt>
+        <dd>@Model.Address</dd>
+        <dt>Phone</dt>
+        <dd>@Model.Phone</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Patients">Back to List</a>|
+    <a asp-action="Edit" asp-controller="Patients" asp-route-id="@Model.Id">Edit</a>
+</div>
